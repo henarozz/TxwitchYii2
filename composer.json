@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "guzzlehttp/guzzle": "^6.3",
-        "bower-asset/toastr": "^2.1"
+        "bower-asset/toastr": "^2.1",
+        "bower-asset/vue": "^2.6"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

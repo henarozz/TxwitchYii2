@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b9220d7d7cb05a59d5957b648d3378c",
+    "content-hash": "b3eac0cfbfe35db4e21047d88d25e334",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -96,6 +96,21 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.6.3"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/vue",
+            "version": "v2.6.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vuejs/vue.git",
+                "reference": "e90cc60c4718a69e2c919275a999b7370141f3bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vuejs/vue/zipball/e90cc60c4718a69e2c919275a999b7370141f3bf",
+                "reference": "e90cc60c4718a69e2c919275a999b7370141f3bf"
             },
             "type": "bower-asset"
         },
