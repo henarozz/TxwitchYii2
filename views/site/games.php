@@ -22,10 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
         
         <div class="col-md-4">
             <div style="margin: 0 0 20px 0; padding: 20px 0px; background-color: #333; text-align: center;">
-                <img src="<?php echo $game->getBoxArtUrl(); ?>" border="0" />
-                <h4><?php echo $game->getName(); ?></h4>
-                <a href="<?php echo Url::toRoute(['site/streams', 'game_id' => $game->getId(), 'lang' => '']); ?>" class="btn btn-dark btn-sm">Global Top</a>
-                <a href="<?php echo Url::toRoute(['site/streams', 'game_id' => $game->getId(), 'lang' => 'ru']); ?>" class="btn btn-dark btn-sm">Russian Top</a>
+                <img src="<?php echo $game->boxArtUrl; ?>" border="0" />
+                <h4><?php echo $game->name; ?></h4>
+                <a href="<?php echo Url::toRoute(['site/streams', 'game_id' => $game->id, 'lang' => '']); ?>" class="btn btn-dark btn-sm">Global Top</a>
+                <a href="<?php echo Url::toRoute(['site/streams', 'game_id' => $game->id, 'lang' => 'ru']); ?>" class="btn btn-dark btn-sm">Russian Top</a>
             </div>
         </div>
         

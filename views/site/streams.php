@@ -14,11 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <?php foreach($streams as $stream): ?>
     
-    <?php
-        $channelName = $stream->getChannel()->getName();
-        $channelUserId = $stream->getChannel()->getUserId();
-    ?>
-    
     <?php if ($q === 0): ?>
     <div class="row">
     <?php endif; ?>
@@ -27,10 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
         
         <div class="col-md-4">
             <div style="margin: 0 0 20px 0; padding: 20px 0px; background-color: #333; text-align: center;">
-                <img src="<?php echo $stream->getThumbnailUrl(); ?>" border="0" />
-                <h4><?php echo $channelName; ?></h4>
-                <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $stream->getAmountOfViewers(); ?></p>
-                <a href="<?php echo Url::toRoute(['site/channel', 'user_channel' => $channelName, 'user_id' => $channelUserId]); ?>" class="btn btn-dark btn-sm">Get HLS links</a>
+                <img src="<?php echo $stream->thumbnailUrl; ?>" border="0" />
+                <h4><?php echo $stream->channel->name; ?></h4>
+                <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $stream->amountOfViewers; ?></p>
+                <a href="<?php echo Url::toRoute(['site/channel', 'user_channel' => $stream->channel->name, 'user_id' => $stream->channel->userId]); ?>" class="btn btn-dark btn-sm">Get HLS links</a>
             </div>
         </div>
         

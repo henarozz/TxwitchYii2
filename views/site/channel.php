@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = $channel->getName();
+$this->title = $channel->name;
 $this->params['breadcrumbs'][] = $this->title;
 $jsBody = <<<JS
     $('.btn-copy-link').on('click', function() {
@@ -33,7 +33,7 @@ $this->registerJs($jsBody);
         
         <div class="col-md-12">
             <div style="margin: 0 0 20px 0; padding: 20px 0px; background-color: #333; text-align: center;">
-                <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_<?php echo $channel->getName(); ?>-640x360.jpg" border="0" />
+                <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_<?php echo $channel->name; ?>-640x360.jpg" border="0" />
             </div>
         </div>
     
@@ -43,7 +43,7 @@ $this->registerJs($jsBody);
         <div class="col-md-12">
             <div style="overflow-x: hidden;">
                 <ul class="list-unstyled">
-                    <?php foreach ($channel->getPlaylist() as $hls) : ?>
+                    <?php foreach ($channel->playlist as $hls) : ?>
                         <li>
                             <h4><?php echo $hls['inf'][2]; ?>, <?php echo $hls['inf'][5]; ?></h4>
                             <a href="<?php echo $hls['uri']; ?>" style="white-space: nowrap;" target="_blank">

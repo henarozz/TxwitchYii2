@@ -100,8 +100,10 @@ class SiteController extends Controller
         $games = [];
         
         foreach ($topGames as $game) {
-            $gameModel = new Game($game['id'], $game['name']);
-            $gameModel->setBoxArtUrl($game['box_art_url']);
+            $gameModel = new Game();
+            $gameModel->id = $game['id'];
+            $gameModel->name = $game['name'];
+            $gameModel->boxArtUrl = $game['box_art_url'];
             $games[] = $gameModel;
         }
         
@@ -128,11 +130,14 @@ class SiteController extends Controller
         $streams = [];
         
         foreach ($topStreams as $stream) {
-            $channelModel = new Channel($stream['channel_name'], $stream['user_id']);
+            $channelModel = new Channel();
+            $channelModel->name = $stream['channel_name'];
+            $channelModel->userId = $stream['user_id'];
             $streamModel = new Stream();
-            $streamModel->setChannel($channelModel);
-            $streamModel->setThumbnailUrl($stream['thumbnail_url']);
-            $streamModel->setAmountOfViewers($stream['viewer_count']);
+            $streamModel->channel = $channelModel;
+            $streamModel->thumbnailUrl = $stream['thumbnail_url'];
+            $streamModel->amountOfViewers = $stream['viewer_count'];
+
             $streams[] = $streamModel;
         }
         
@@ -158,8 +163,10 @@ class SiteController extends Controller
             throw new \yii\web\NotFoundHttpException("Channel is not available.");
         }
         
-        $channelModel = new Channel($user_channel, $user_id);
-        $channelModel->setPlaylist($playlist);
+        $channelModel = new Channel();
+        $channelModel->name = $user_channel;
+        $channelModel->userId = $user_id;
+        $channelModel->playlist = $playlist;
         
         return $this->render('channel', [
             'channel' => $channelModel
